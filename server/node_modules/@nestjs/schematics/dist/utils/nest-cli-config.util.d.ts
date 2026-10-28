@@ -1,0 +1,5 @@
+import { SchematicContext, Tree } from '@angular-devkit/schematics';
+export declare const NEST_CLI_CONFIG_FILES: string[];
+export declare function findNestCliConfigPath(tree: Tree): string | undefined;
+export declare function warnAboutLegacyNestCliConfig(tree: Tree, context: SchematicContext): void;
+export declare function readJsonFile<T = Record<string, any>>(tree: Tree, path: string): T | null;
