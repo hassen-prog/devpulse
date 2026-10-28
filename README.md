@@ -1,7 +1,9 @@
 
 # DevPulse — GitHub Repository Health Analyzer
 
-![DevPulse CI](https://github.com/hassen-prog/devpulse/actions/workflows/ci.yml/badge.svg)
+
+[![DevPulse CI](https://github.com/hassen-prog/devpulse/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/hassen-prog/devpulse/actions/workflows/ci.yml)
+
 ![Next.js](https://img.shields.io/badge/Next.js-TypeScript-black?logo=next.js)
 ![NestJS](https://img.shields.io/badge/NestJS-TypeScript-ea2845?logo=nestjs)
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)
@@ -13,6 +15,20 @@ DevPulse analyzes public GitHub repositories and presents repository metrics, co
 
 It combines a Next.js frontend with a NestJS REST API, containerized development using Docker Compose, and automated validation through GitHub Actions.
 
+## Screenshots
+
+### Repository overview
+
+Explore repository metadata, stars, forks, and other GitHub statistics in the DevPulse dashboard.
+
+![DevPulse dashboard overview](docs/screenshots/dashboard-overview-1.png)
+![DevPulse dashboard overview](docs/screenshots/dashboard-overview-2.png)
+### Engineering health and activity
+
+Inspect the repository health score, engineering checks, commit activity, and top contributors.
+
+![DevPulse engineering insights](docs/screenshots/health-and-activity-1.png)
+![DevPulse engineering insights](docs/screenshots/health-and-activity-2.png)
 ## Features
 
 ### Repository insights
