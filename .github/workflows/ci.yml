@@ -1,0 +1,56 @@
+
+name: DevPulse CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Test and build applications
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: |
+            client/package-lock.json
+            server/package-lock.json
+
+      - name: Install frontend dependencies
+        run: npm ci
+        working-directory: client
+
+      - name: Build Next.js frontend
+        run: npm run build
+        working-directory: client
+        env:
+          NEXT_PUBLIC_API_URL: http://localhost:3001
+
+      - name: Install backend dependencies
+        run: npm ci
+        working-directory: server
+
+      - name: Run backend unit tests
+        run: npm run test:unit
+        working-directory: server
+
+      - name: Build NestJS backend
+        run: npm run build
+        working-directory: server
