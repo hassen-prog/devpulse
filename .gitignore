@@ -1,0 +1,17 @@
+
+# Dependencies
+**/node_modules/
+
+# Build outputs
+**/dist/
+**/.next/
+**/out/
+**/coverage/
+
+# TypeScript build cache
+**/*.tsbuildinfo
+
+# Local environment variables
+**/.env
+**/.env.*
+!**/.env.example
