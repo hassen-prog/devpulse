@@ -6,6 +6,7 @@ import { analyzeRepository } from '@/app/lib/repositories';
 import type { AnalyzedRepository } from '@/app/types/repository';
 import { RepositoryHealth } from '@/components/repository-health';
 import { RepositoryInsights } from '@/components/repository-insights';
+import Image from 'next/image';
 const numberFormatter = new Intl.NumberFormat('en', {
   notation: 'compact',
   maximumFractionDigits: 1,
@@ -83,10 +84,17 @@ export default function Home() {
 
       <header className="relative mx-auto flex max-w-6xl items-center justify-between border-b border-white/5 px-6 py-6">
         <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-violet-400/30 bg-violet-500/15 font-bold text-violet-200">
+          {/* <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-violet-400/30 bg-violet-500/15 font-bold text-violet-200">
             DP
-          </div>
-
+          </div> */}
+<Image
+  src="/icon.svg"
+  alt="DevPulse logo"
+  width={44}
+  height={44}
+  priority
+  className="h-11 w-11 rounded-xl"
+/>
           <div>
             <p className="text-lg font-semibold tracking-tight">DevPulse</p>
             <p className="text-[10px] tracking-[0.2em] text-slate-500">
